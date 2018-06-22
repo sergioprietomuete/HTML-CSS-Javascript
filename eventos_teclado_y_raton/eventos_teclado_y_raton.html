@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SERGIOxelmundo: Dibujando con eventos de teclado y raton</title>
+</head>
+<body>
+	<h2>Vas a crear y colorear una MANDALA con movimientos producidos por el teclado y el ratón</h2>
+	<p>
+		<p><b>Crea la figura a tu gusto..! Manos a la obra</b></p>
+		Mueve los 2 rangos abajo, para que aparezca la imagen:<br>
+		Tamaño de la mandala:
+		<input type="range" id="tamano" onchange="tamano()" min="200" max="400" value="320" /><br>
+		Forma y Tamaño de la figura:
+		<input type="range" min="3" max="40" id="puntos" value="13" /><br><br>
+	</p>
+	<p id="mensaje"></p>
+	<canvas width="402" height="402" id="area_de_dibujo"></canvas>
+	<p id="alerta"></p>
+<script src="eventos_teclado_y_raton.js"></script>
+</body>
+</html>
