@@ -1,5 +1,13 @@
+/**********  Variables & Constants  **********/
+
 let vp = document.getElementById("villaSergio")
 let papel = vp.getContext("2d")
+
+let cantidadVacas = aleatorio(0,10)
+let cantidadPollos = aleatorio(0,10)
+let cantidadCerdos = aleatorio(0,10)
+let xHombreLobo = aleatorio(0, 420)
+let yHombreLobo = aleatorio(0, 420)
 
 const teclas = {
     UP : 38,
@@ -7,6 +15,9 @@ const teclas = {
     DOWN : 40,
     LEFT: 37
 }
+
+
+/**********  Load images and throw functions  **********/
 
 let fondo = {
   url : "tile.png",
@@ -50,6 +61,8 @@ hombreLobo.imagen = new Image()
 hombreLobo.imagen.src = hombreLobo.url
 hombreLobo.imagen.addEventListener("load", cargarHombreLobo)
 
+
+/**********  Functions  **********/
 
 function cargarFondo(){
   fondo.cargaOk = true
@@ -98,15 +111,10 @@ if (fondo.cargaOk) {
           }
         } if (hombreLobo.cargaOk) {
             papel.drawImage(hombreLobo.imagen, xHombreLobo, yHombreLobo, hombreLobo.width, hombreLobo.height)
+            document.getElementById('message').innerHTML = "<p>[ Puedes mover el <b>Hombre Lobo</b> con las flechas del teclado ]</p>"
             document.addEventListener("keydown", moverConTeclado)
           }
 }
-
-let cantidadVacas = aleatorio(0,10)
-let cantidadPollos = aleatorio(0,10)
-let cantidadCerdos = aleatorio(0,10)
-let xHombreLobo = aleatorio(0, 420)
-let yHombreLobo = aleatorio(0, 420)
 
 function aleatorio(min, maxi)
 {
@@ -135,7 +143,6 @@ function moverConTeclado(evento) {
 }
 
 function moverImagen(animal, xinicial, yinicial, papel) {
-    // papel.clearRect(x, y, x+1, y+1)
     papel.beginPath()
     papel.drawImage(animal, xHombreLobo, yHombreLobo, hombreLobo.width, hombreLobo.height)
     papel.stroke()
